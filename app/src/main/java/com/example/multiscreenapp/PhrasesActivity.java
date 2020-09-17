@@ -12,7 +12,7 @@ public class PhrasesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phrases);
+        setContentView(R.layout.word_list);
         ArrayList<Word> words = new ArrayList<Word>();
 
         //words.add("One");
@@ -37,7 +37,7 @@ public class PhrasesActivity extends AppCompatActivity {
         WordAdapter  adapter = new WordAdapter(this,words);
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // activity_numbers.xml layout file.
+        
 
         ListView listView = (ListView)findViewById(R.id.list);
         // Make the {@link ListView} use the {@link ArrayAdapter} we created above, so that the
