@@ -2,11 +2,17 @@ package com.example.multiscreenapp;
 
 public class Word {
 
+
+    private static final int NO_IMAGE_PROVIDED = -1 ;
     /** Default translation for the word */
     private String mDefaultTranslation;
 
     /** Miwok translation for the word */
     private String mMiwokTranslation;
+
+    /** iamge resource id */
+    private int mImageResourceId = N0_IMAGE_PROVIDED;
+    private static final int N0_IMAGE_PROVIDED =-1;
 
     /**
      * Create a new Word object.
@@ -18,6 +24,19 @@ public class Word {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
     }
+    /**
+     * Create a new Word object.
+     *  @param defaultTranslation is the word in a language that the user is already familiar with
+     *                           (such as English)
+     * @param miwokTranslation is the word in the Miwok language
+     * @param  imageResourceId is the id of the image
+     */
+    public Word(String defaultTranslation, String miwokTranslation ,int imageResourceId) {
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mImageResourceId = imageResourceId;
+    }
+    /** Constant value that represents no image was provided for this word */
 
     /**
      * Get the default translation of the word.
@@ -31,5 +50,20 @@ public class Word {
      */
     public String getMiwokTranslation() {
         return mMiwokTranslation;
+    }
+
+    /**
+     *
+     * @return imageresuorce id
+     */
+    public int getImageResourceId() {
+        return mImageResourceId;
+    }
+
+    /**
+     * Returns whether or not there is an image for this word.
+     */
+    public boolean hasImage() {
+        return mImageResourceId != NO_IMAGE_PROVIDED;
     }
 }
