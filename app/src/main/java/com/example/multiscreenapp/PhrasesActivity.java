@@ -52,8 +52,15 @@ public class PhrasesActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, R.raw.number_one);
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                // Get the {@link Word} object at the given position the user clicked on
+                Word word = words.get(position);
+
+                // Create and setup the {@link MediaPlayer} for the audio resource associated
+                // with the current word
+                mMediaPlayer = MediaPlayer.create(PhrasesActivity.this,word.getAudioResourceId());
+
+                // Start the audio file
                 mMediaPlayer.start();
             }
         });

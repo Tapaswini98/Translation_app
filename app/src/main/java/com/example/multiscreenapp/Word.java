@@ -32,6 +32,8 @@ public class Word {
      *  @param defaultTranslation is the word in a language that the user is already familiar with
      *                           (such as English)
      * @param miwokTranslation is the word in the Miwok language
+     * @param imageResourceId is the image ids
+     * @param audioResourceId is the id of audio files
      */
     public Word(String defaultTranslation, String miwokTranslation ,int imageResourceId ,int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
